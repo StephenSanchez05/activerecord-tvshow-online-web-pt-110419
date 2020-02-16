@@ -19,4 +19,8 @@ class Show < ActiveRecord::Base
   def self.ratings_sum
     self.sum(:rating)
   end 
+  
+  def self.popular_show
+    self.where("rating > ?", 5)
+  end
 end 
